@@ -10,16 +10,22 @@ function PlaylistDetails({ songs, onRemoveSong }) {
     function playlistNotEmpty(){
         return songs.length > 0;
     }
-    console.log(songs);
+    
     return (
         <>
         <div>
-            <h3>Song - Artist - Album</h3>
-            {songs.map((track) => (
-                <div key={track.id}>
-                    <p>{track.name} - {track.artist} - {track.album} <button onClick={() => removeSong(track.id)}>x</button></p>
-                </div>
-            ))}
+            <h3>Song - Album - Artist</h3>
+            {songs.map((track) => {
+                console.log(track);
+                console.log(track.artists.map(artist => artist.name).join(', '));
+                return (
+                    <div key={track.id}>
+                        <p>{track.name} - {track.album.name} - {track.artists.map(artist => artist.name).join(', ')} <button onClick={() => removeSong(track.id)}>x</button></p>
+                    </div>
+                )
+            })}
+                
+
             {playlistNotEmpty() && <ExportPlaylist songs={songs}/>}
         </div>
         </>
