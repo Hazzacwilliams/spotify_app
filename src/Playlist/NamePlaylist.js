@@ -4,7 +4,9 @@ import SetNamePlaylist from "./SetNamePlaylist";
 
 function NamePlaylist(){
     const [name, setName] = useState('');
-   
+    
+    localStorage.setItem('playlist_name', name);
+
     return (
         <>
         <div>

@@ -1,10 +1,11 @@
 import React from 'react';
+import './CreatePlaylist.css';
 
 function CreatePlaylist({ onClick }){
 
     return (
         <>
-            <button onClick={onClick}>Create Playlist!</button>
+            <button class="button" role="button" onClick={onClick}>Create Playlist!</button>
         </>
     );
 }

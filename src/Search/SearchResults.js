@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import './SearchResults.css';
 
 function SearchResults({ searchTerm, onAddSong }) {
     const [results, setResults] = useState([]);
@@ -32,13 +33,13 @@ function SearchResults({ searchTerm, onAddSong }) {
     }, [searchTerm]);
 
     return (
-        <div>
+        <div id="main">
             {/* Render your search results here */}
-            {results.map(track => (
+            {results.slice(0, 5).map(track => (
                 <div key={track.id}>
                     <h2>
                         {track.name} - {track.album.name} - {track.artists.map(artist => artist.name).join(', ')}
-                    <button onClick={() => onAddSong(track)}>+</button>
+                    <button id="addButton" onClick={() => onAddSong(track)}>+</button>
                     </h2>
                 </div>
             ))}

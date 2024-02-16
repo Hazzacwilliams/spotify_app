@@ -1,7 +1,7 @@
 import React, {useState} from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import './App.css';
-import Login from './Login';
+import Login from './Spotify_API/Login';
 import Home from './Home';
 import Callback from './Callback';
 

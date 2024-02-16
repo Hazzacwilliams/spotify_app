@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import './SearchBar.css'
 
 function SearchBar({ onSearchChange }){
 
@@ -13,7 +14,9 @@ function SearchBar({ onSearchChange }){
     return (
         <>
         <div>
-            <input id='searchBar' type='text' value={search} onChange={handleChange} placeholder='Browse Spotify Here!'></input>
+            <span class="input">
+                <input id='myInput' type='text' value={search} onChange={handleChange} placeholder='Browse Spotify Here!'></input>  
+            </span>
         </div>
         </>
     );

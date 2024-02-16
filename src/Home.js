@@ -1,6 +1,7 @@
 import React, { useState } from "react";
-import SearchManager from './SearchManager';
-import Playlist from './Playlist';
+import SearchManager from './Search/SearchManager';
+import Playlist from './Playlist/Playlist';
+import './Home.css';
 
 function Home() {
   const [playlist, setPlaylist] = useState([]);
@@ -22,8 +23,9 @@ function Home() {
 
   return (
     <div>
-      <h1>JAMMMIN</h1>
-      <h2>By Harry Williams</h2>
+      <h1>JAMMMIN </h1>
+      <h4>By Harry Williams</h4>
+      
       <SearchManager onAddSong={handleAddSong}/>
       <Playlist songs={playlist} onRemoveSong={removeSong}/>
     </div>

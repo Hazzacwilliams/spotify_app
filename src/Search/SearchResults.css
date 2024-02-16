@@ -1,0 +1,22 @@
+h2 {
+    color: purple;
+    font-family: "Fredoka", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 20px;
+}
+#main {
+    background-color: black;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+#addButton {
+    display: inline-flex;
+    margin-left: 10px;
+    background-color: black;
+    color: purple;
+    font-size: 20px;
+    box-shadow: none;
+}

@@ -1,12 +1,20 @@
 import React, { useState } from "react";
+import { createPlaylist } from "../Spotify_API/createPlaylist";
+import './WriteNamePlaylist.css';
 
 function WriteNamePlaylist({ onFormSubmit }){
     const [name, setName] = useState('');
     let isChanged = false;
 
-    function handleSubmit(e){
+    async function handleSubmit(e){
         e.preventDefault();
-        onFormSubmit(name);
+        try {
+            await createPlaylist(name);
+            onFormSubmit(name);
+        } catch (error) {
+            console.error("Failed to generate playlist:" + error);
+        }
+        
     }
     function handleInputChange(e){
         setName(e.target.value);
@@ -18,10 +26,10 @@ function WriteNamePlaylist({ onFormSubmit }){
     }
     return (
         <>
-        <div>
+        <div id="playlistNaming">
             <form onSubmit={handleSubmit}>
                 <input type="text" placeholder="Name your playlist" value={name} onChange={handleInputChange}></input>
-                <button id="button"type="submit" onClick={!isChanged && changeButton}>Confirm name</button>
+                <button id="button" class="button" type="submit" onClick={!isChanged && changeButton}>Confirm name</button>
             </form>
             
         </div>

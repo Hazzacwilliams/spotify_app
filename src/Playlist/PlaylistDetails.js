@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
-import ExportPlaylist from "./ExportPlaylist";
+import ExportManager from "../Export/ExportManager";
+import './PlaylistDetails.css';
 
 function PlaylistDetails({ songs, onRemoveSong }) {
 
@@ -16,8 +17,6 @@ function PlaylistDetails({ songs, onRemoveSong }) {
         <div>
             <h3>Song - Album - Artist</h3>
             {songs.map((track) => {
-                console.log(track);
-                console.log(track.artists.map(artist => artist.name).join(', '));
                 return (
                     <div key={track.id}>
                         <p>{track.name} - {track.album.name} - {track.artists.map(artist => artist.name).join(', ')} <button onClick={() => removeSong(track.id)}>x</button></p>
@@ -26,7 +25,7 @@ function PlaylistDetails({ songs, onRemoveSong }) {
             })}
                 
 
-            {playlistNotEmpty() && <ExportPlaylist songs={songs}/>}
+            {playlistNotEmpty() && <ExportManager songs={songs}/>}
         </div>
         </>
     )

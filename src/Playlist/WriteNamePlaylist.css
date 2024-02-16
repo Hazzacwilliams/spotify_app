@@ -1,0 +1,19 @@
+input {
+    border-radius: 25px;
+    border-color: black;
+    margin-bottom: 10px;
+    text-align: center;
+}
+form {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    max-width: 200px;
+    
+}
+#playlistNaming {
+    display: flex;
+    max-height: 50px;
+    justify-content: center;
+}

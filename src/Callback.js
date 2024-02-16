@@ -2,7 +2,6 @@ import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 
 function Callback() {
-    console.log("huh");
     const [isLoading, setIsLoading] = useState(true);
     const navigate = useNavigate();
 
